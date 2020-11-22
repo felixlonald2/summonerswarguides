@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Lemonada|Open+Sans|Roboto&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        h1{
+            font-family: 'Open Sans', sans-serif;
+        }
+        h3{
+            font-family: 'Roboto', sans-serif;
+        }
+        .container{
+            width: 100%;
+            height: 5500px;
+            position: absolute;
+            background-color: rgb(21, 21, 21);
+        }
+        #backgroundhead{
+            width: 90%;
+            position: absolute;
+            left: 70px;
+            top:80px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style-type: none;
+            position: absolute;
+            left:500px;
+            top:30px;
+            font-size: 20px;
+
+        }
+        .underbar {
+            width: 0;
+            height: 5px;
+            background: rgba(100, 100, 200, 0);
+            top: 30px;
+            position: absolute;
+            -webkit-transition: 0.5s ease;
+        }
+        li {
+            width: 100px;
+            float: left;
+            -webkit-transition: 0.5s ease;
+            cursor: pointer;
+        }
+        li:hover {
+            text-shadow: 0px -2px 0px #000000, 0 0 5px rgba(255, 255, 255, 0.8), 0 -4px 15px rgba(255, 255, 255, 0.5);
+        }
+        li:nth-of-type(1):hover ~ .underbar {
+            left: 0;
+            width: 60px;
+            background: #6464c8;
+        }
+        li:nth-of-type(2):hover ~ .underbar {
+            left: 100px;
+            width: 60px;
+            background: #c86464;
+        }
+        li:nth-of-type(3):hover ~ .underbar {
+            left: 200px;
+            width: 67px;
+            background: yellow;
+        }
+        li:nth-of-type(4):hover ~ .underbar {
+            left: 300px;
+            width: 57px;
+            background: green;
+        }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }   
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {background-color: #ddd;}
+
+    .dropdown:hover .dropdown-content {display: block;}
+
+    .dropdown:hover .dropbtn {background-color: #3e8e41;}
+        
+        #iconfacebook{
+            position: absolute;
+            left:1010px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("fb-01.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #iconinstagram{
+            position: absolute;
+            left:1060px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("ig-01.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #icontwitter{
+            position: absolute;
+            left:1110px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("tw-01.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #iconyoutube{
+            position: absolute;
+            left:1160px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("utube.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #iconchat{
+            position: absolute;
+            left:1210px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("cht-01.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #icondc{
+            position: absolute;
+            left:1260px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("dc-01.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #iconfacebook:hover{
+            cursor: pointer;
+        }
+        #iconinstagram:hover{
+            cursor: pointer;
+        }
+        #icontwitter:hover{
+            cursor: pointer;
+        }
+        #iconyoutube:hover{
+            cursor: pointer;
+        }
+        #icondc:hover{
+            cursor: pointer;
+        }
+        #iconchat:hover{
+            cursor: pointer;
+        }
+        #logoheaderSW{
+            position: absolute;
+            left:70px;
+            top:15px;
+            width: 210px;
+            height: 50px;
+            background-image: url("logo.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        #logosw{
+            position: absolute;
+            top:300px;
+            left:400px;
+            width: 600px;
+            height: 300px;
+            background-image: url("Summoners-War-Logo.png");
+        }
+        #backgroundkedua{
+            position: absolute;
+            top:672px;
+            left: 70px;
+            width: 1228px;
+            height: 700px;
+            background-image: url("bg_arena.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        #backgroundkeduatransparent{
+            position: absolute;
+            top:672px;
+            left: 70px;
+            width: 1228px;
+            height: 538px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        #isibackgroundkeduatransparent1{
+            position: absolute;
+            left:350px;
+            top:732px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+        }
+        #isibackgroundkeduatransparent2{
+            position: absolute;
+            left:300px;
+            top:832px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+        }
+        #isibackgroundkeduatransparent3{
+            position: absolute;
+            left:275px;
+            top:882px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+        }
+        #isibackgroundkeduatransparent4{
+            position: absolute;
+            left:340px;
+            top:932px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+        }
+        #jumptosection{
+            position: absolute;
+            left:600px;
+            top:1050px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+        }
+        #buttonmonster{
+            position: absolute;
+            width: 200px;
+            height: 30px;
+            stroke: silver;
+            left:575px;
+            top:1120px;
+            background-color: goldenrod;
+            color: wheat;
+            font-size: 20px;
+            font-family: 'Open Sans', sans-serif;
+            transition: width 0.5s , 0.5s;
+            text-align: center;
+            padding-top: 2px;
+            border-radius: 4px;
+        }
+        #buttonmonster:hover {
+            background-color: wheat;
+            color: goldenrod;
+            cursor: pointer;
+        }
+        #buttonnews{
+            position: absolute;
+            width: 200px;
+            height: 30px;
+            stroke: silver;
+            left:300px;
+            top:1120px;
+            background-color: goldenrod;
+            color: wheat;
+            font-size: 20px;
+            font-family: 'Open Sans', sans-serif;
+            transition: width 0.5s , 0.5s;
+            text-align: center;
+            padding-top: 2px;
+            border-radius: 4px;
+        }
+        #buttonnews:hover {
+            background-color: wheat;
+            color: goldenrod;
+            cursor: pointer;
+        }
+        #buttonguides{
+            position: absolute;
+            width: 200px;
+            height: 30px;
+            stroke: silver;
+            left:850px;
+            top:1120px;
+            background-color: goldenrod;
+            color: wheat;
+            font-size: 20px;
+            font-family: 'Open Sans', sans-serif;
+            transition: width 0.5s , 0.5s;
+            text-align: center;
+            padding-top: 2px;
+            border-radius: 4px;
+        }
+        #buttonguides:hover {
+            background-color: wheat;
+            color: goldenrod;
+            cursor: pointer;
+        }
+        #swdesc1{
+            width: 700px;
+            height: 450px;
+            position: absolute;
+            top:900px;
+            left:600px;
+            background-image: url("bg-01.png");
+            background-size: cover;
+        }
+        #juduldesc1{
+            position: absolute;
+            width: 700px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            font-size: 30px;
+            color: wheat;
+            top:50px;
+            text-align: center;
+        }
+        #isidesc1{
+            position: absolute;
+            width: 600px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+            color: goldenrod;
+            left: 50px;
+            top:130px;
+        }
+        #swdesc2{
+            width: 700px;
+            height: 450px;
+            position: absolute;
+            top:1400px;
+            left:100px;
+            background-image: url("bg-01.png");
+            background-size: cover;
+        }
+        #swdesc3{
+            width: 700px;
+            height: 450px;
+            position: absolute;
+            top:1900px;
+            left:600px;
+            background-image: url("bg-01.png");
+            background-size: cover;
+        }
+       
+        #swlistmonsters{
+            width: 1200px;
+            height: 650px;
+            position: absolute;
+            top:4200px;
+            padding-left: 100px;
+        }
+        #judullistmonsters{
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            font-size: 30px;
+            color: wheat;
+        }
+        #element1{
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            background-image: url("fire-large.png");
+            background-size: contain;
+            top:180px;
+            left: 20px;
+            transition: transform .2s;
+        }
+        #element2{
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            background-image: url("water-large.png");
+            background-size: contain;
+            top:180px;
+            left: 70px;
+            transition: transform .2s;
+        }
+        #element3{
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            background-image: url("wind-large.png");
+            background-size: contain;
+            top:180px;
+            left: 120px;
+            transition: transform .2s;
+        }
+        #element4{
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            background-image: url("light-large.png");
+            background-size: contain;
+            top:180px;
+            left: 170px;
+            transition: transform .2s;
+        }
+        #element5{
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            background-image: url("dark-large.png");
+            background-size: contain;
+            top:180px;
+            left: 220px;
+            transition: transform .2s;
+        }
+        #namamonster{
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+            color: rgb(182, 171, 106);
+            position: absolute;
+            top: 80px;
+            width: 100%;
+            text-align: center;
+            transition: 0.5s;
+        }
+        #namamonster:hover{
+            color: silver;
+            cursor: pointer;
+        }
+        #boxmonster1{
+            width: 20%;
+            height: 200px;
+            position: absolute;
+            background-color: rgb(39, 22, 6);
+            border-radius: 10px;
+            transition: transform .2s;
+            top:150px;
+        }
+
+        #element1:hover {
+            transform: scale(1.5);
+            cursor: pointer;
+        }
+        #element2:hover {
+            transform: scale(1.5);
+            cursor: pointer;
+        }
+        #element3:hover {
+            transform: scale(1.5);
+            cursor: pointer;
+        }
+        #element4:hover {
+            transform: scale(1.5);
+            cursor: pointer;
+        }
+        #element5:hover {
+            transform: scale(1.5);
+            cursor: pointer;
+        }
+
+        #boxmonster1:hover {
+            transform: scale(1.1);
+        }
+        #boxmonster2:hover {
+            transform: scale(1.1);
+        }
+        #boxmonster3:hover {
+            transform: scale(1.1);
+        }
+        #boxmonster4:hover {
+            transform: scale(1.1);
+        }
+        #boxmonster5:hover {
+            transform: scale(1.1);
+        }
+        #boxmonster6:hover {
+            transform: scale(1.1);
+        }
+
+        #monster1{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-image: url("beastrider.png");
+            border-radius: 50%;
+            left:85px;
+            top: -50px;
+        }
+        #bordermonster1{
+            width: 110px ;
+            height: 110px;
+            position: absolute;
+            background-color: goldenrod;
+            border-radius: 50%;
+            left:80px;
+            top: -55px;
+        }
+        #monsterstar1{
+            position: absolute;
+            left: 55px;
+            top: 120px;
+            width: 160px;
+            height: 30px;
+            background-image: url("star.png");
+            background-size: contain;
+        }
+        #monsterstar2{
+            position: absolute;
+            left: 70px;
+            top: 120px;
+            width: 128px;
+            height: 30px;
+            background-image: url("star.png");
+            background-size: contain;
+        }
+        #boxmonster2{
+            width: 20%;
+            height: 200px;
+            position: absolute;
+            background-color: rgb(39, 22, 6);
+            top:150px;
+            left:530px;
+            border-radius: 10px;
+            transition: transform .2s;
+        }
+        #monster2{
+            width: 100px ;
+            height: 100px;
+            position: absolute;
+            background-image: url("demon.png");
+            border-radius: 50%;
+            left:85px;
+            top: -50px;
+        }
+        #bordermonster2{
+            width: 110px ;
+            height: 110px;
+            position: absolute;
+            background-color: goldenrod;
+            border-radius: 50%;
+            left:80px;
+            top: -55px;
+        }
+        #boxmonster3{
+            width: 20%;
+            height: 200px;
+            position: absolute;
+            background-color: rgb(39, 22, 6);
+            top:150px;
+            left:960px;
+            border-radius: 10px;
+            transition: transform .2s;
+        }
+        #monster3{
+            width: 100px ;
+            height: 100px;
+            position: absolute;
+            background-image: url("vampirelord.png");
+            border-radius: 50%;
+            left:85px;
+            top: -50px;
+        }
+        #bordermonster3{
+            width: 110px ;
+            height: 110px;
+            position: absolute;
+            background-color: goldenrod;
+            border-radius: 50%;
+            left:80px;
+            top: -55px;
+        }
+        #boxmonster4{
+            width: 20%;
+            height: 200px;
+            position: absolute;
+            background-color: rgb(39, 22, 6);
+            top:450px;
+            border-radius: 10px;
+            transition: transform .2s;
+        }
+        #monster4{
+            width: 100px ;
+            height: 100px;
+            position: absolute;
+            background-image: url("lightningemperor.png");
+            border-radius: 50%;
+            left:85px;
+            top: -50px;
+        }
+        #bordermonster4{
+            width: 110px ;
+            height: 110px;
+            position: absolute;
+            background-color: goldenrod;
+            border-radius: 50%;
+            left:80px;
+            top: -55px;
+            
+        }
+        #boxmonster5{
+            width: 20%;
+            height: 200px;
+            position: absolute;
+            background-color: rgb(39, 22, 6);
+            left:530px;
+            top:450px;
+            border-radius: 10px;
+            transition: transform .2s;
+        }
+        #monster5{
+            width: 100px ;
+            height: 100px;
+            position: absolute;
+            background-image: url("gargo.png");
+            border-radius: 50%;
+            left:85px;
+            top: -50px;
+        }
+        #bordermonster5{
+            width: 110px ;
+            height: 110px;
+            position: absolute;
+            background-color: goldenrod;
+            border-radius: 50%;
+            left:80px;
+            top: -55px;
+        }
+        #boxmonster6{
+            width: 20%;
+            height: 200px;
+            position: absolute;
+            background-color: rgb(39, 22, 6);
+            left:960px;
+            top:450px;
+            border-radius: 10px;
+            transition: transform .2s;
+        }
+        #monster6{
+            width: 100px ;
+            height: 100px;
+            position: absolute;
+            background-image: url("sniper.png");
+            border-radius: 50%;
+            left:85px;
+            top: -50px;
+        }
+        #bordermonster6{
+            width: 110px ;
+            height: 110px;
+            position: absolute;
+            background-color: goldenrod;
+            border-radius: 50%;
+            left:80px;
+            top: -55px;
+        }
+        #boxfusion{
+            width: 1200px;
+            height: 300px;
+            position: absolute;
+            left: 80px;
+            background-color: rgb(39, 22, 6);
+            top:5000px;
+        }
+        #fusionchart{
+            width: 330px;
+            height: 400px;
+            position: absolute;
+            top:-40px;
+            left:50px;
+            background-image: url("summoners-war-fusion-chart-icon.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #judulfusionchart{
+            position: absolute;
+            top:40px;
+            left:400px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+            color: wheat;
+        }
+        #subjudulfusionchart{
+            position: absolute;
+            top:80px;
+            left:400px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            font-size: 30px;
+            color: wheat;
+        }
+        #isifusionchart{
+            position: absolute;
+            top:150px;
+            left:400px; 
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: goldenrod;
+        }
+        #footerr{
+            position: absolute;
+            width: 100%;
+            height: 50px;
+            top:5450px;
+            text-align: center;
+            color: gray;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+        }
+        #penghalangfooter{
+            position: absolute;
+            top:5400px;
+            left: 10%;
+            width: 80%;
+            height: 2px;
+            background-color: gray;
+        }
+        #footertambahan{
+            width: 110px;
+            height: 20px;
+            position: absolute;
+            top:5450px;
+            left:1000px;
+            background-image: url("c2u.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #isifooter{
+            margin-bottom: 30px;
+        }
+        #btnchart{
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            stroke: silver;
+            left:400px;
+            top:250px;
+            background-color: goldenrod;
+            color: wheat;
+            font-family: 'Open Sans', sans-serif;
+            transition: width 0.5s , 0.5s;
+            text-align: center;
+            padding-top: 5px;
+            border-radius: 4px;
+        }
+        #btnchart:hover {
+            background-color: wheat;
+            color: goldenrod;
+            cursor: pointer;
+        }
+        
+        #judulguides{
+            position: absolute;
+            left:550px;
+            top:1362px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+        }
+        #subjudulguides{
+            position: absolute;
+            left:460px;
+            top:1430px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+            color: wheat;
+            text-align: center;
+        }
+        #gambargiant{
+            position: absolute;
+            width: 380px;
+            height: 220px;
+            margin-left:80px;
+            top:1530px;
+            background-image: url("giant.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: transform .2s;
+        }
+        #gambardragon{
+            position: absolute;
+            width: 380px;
+            height: 220px;
+            margin-left:480px;
+            top:1530px;
+            background-image: url("dragon.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: transform .2s;
+        }
+        #gambarnecro{
+            position: absolute;
+            width: 380px;
+            height: 220px;
+            margin-left:880px;
+            top:1530px;
+            background-image: url("necro.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: transform .2s;
+        }
+        #judulgiant{
+            position: absolute;
+            left:150px;
+            top:1762px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+            transition: 0.5s;
+        }
+        #judulgiant:hover{
+            color: goldenrod;
+            cursor: pointer;
+        }
+        #juduldragon{
+            position: absolute;
+            left:550px;
+            top:1762px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+            transition: 0.5s;
+        }
+        #juduldragon:hover{
+            color: goldenrod;
+            cursor: pointer;
+        }
+        #judulnecro{
+            position: absolute;
+            left:930px;
+            top:1762px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+            transition: 0.5s;
+        }
+        #judulnecro:hover{
+            color: goldenrod;
+            cursor: pointer;
+        }
+        #isigiant{
+            position: absolute;
+            width: 300px;
+            left:120px;
+            top:1800px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: center;
+        }
+        #isidragon{
+            position: absolute;
+            width: 300px;
+            left:530px;
+            top:1800px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: center;
+        }
+        #gambardragon:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        #gambargiant:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        #gambarnecro:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        #isinecro{
+            position: absolute;
+            width: 300px;
+            left:915px;
+            top:1800px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: center;
+        }
+        #judulguide1{
+            position: absolute;
+            left:180px;
+            top:2100px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+        }
+        #isiguide1{
+            position: absolute;
+            left:165px;
+            top:2200px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: center;
+            width: 400px;
+        }
+        #gambarguide1{
+            position: absolute;
+            width: 580px;
+            height: 320px;
+            margin-left:700px;
+            top:2055px;
+            background-image: url("guide1.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        #btnguide1{
+            position: absolute;
+            width: 200px;
+            height: 30px;
+            stroke: silver;
+            left:260px;
+            top:2320px;
+            background-color: goldenrod;
+            color: wheat;
+            font-family: 'Open Sans', sans-serif;
+            transition: width 0.5s , 0.5s;
+            text-align: center;
+            padding-top: 5px;
+            border-radius: 4px;
+        }
+        #btnguide1:hover {
+            background-color: wheat;
+            color: goldenrod;
+            cursor: pointer;
+        }
+        #judulguide2{
+            position: absolute;
+            left:750px;
+            top:2550px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+        }
+        #isiguide2{
+            position: absolute;
+            left:800px;
+            top:2630px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: center;
+            width: 400px;
+        }
+        #gambarguide2{
+            position: absolute;
+            width: 580px;
+            height: 320px;
+            margin-left:80px;
+            top:2505px;
+            background-image: url("guide2.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        #btnguide2{
+            position: absolute;
+            width: 200px;
+            height: 30px;
+            stroke: silver;
+            left:900px;
+            top:2760px;
+            background-color: goldenrod;
+            color: wheat;
+            font-family: 'Open Sans', sans-serif;
+            transition: width 0.5s , 0.5s;
+            text-align: center;
+            padding-top: 5px;
+            border-radius: 4px;
+        }
+        #btnguide2:hover {
+            background-color: wheat;
+            color: goldenrod;
+            cursor: pointer;
+        }
+        #swbox1{
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            top:2020px;
+            left:70px;
+            background-image: url("bg-01.png");
+            background-size: cover;
+        }
+        #swbox2{
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            top:2470px;
+            left:700px;
+            background-image: url("bg-01.png");
+            background-size: cover;
+        }
+        #runesguide{
+            width: 1200px;
+            height: 600px;
+            position: absolute;
+            top:2950px;
+            left: 82px;
+            background-image: url("runesbg.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #gambarrunesguide{
+            width: 560px;
+            height: 320px;
+            position: absolute;
+            left: 650px;
+            top:3080px;
+            background-image: url("runesguide.jpg");
+            background-size: cover;
+        }
+        #judulrunesguide{
+            position: absolute;
+            left:150px;
+            top:3080px;
+            width: 400px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 40px;
+            font-weight: bold;
+            color: wheat;
+            text-align: left;
+        }
+        #isirunesguide{
+            position: absolute;
+            left:150px;
+            top:3220px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: left;
+            width: 400px;
+        }
+        #btnrunesguide{
+            position: absolute;
+            width: 200px;
+            height: 30px;
+            stroke: silver;
+            left:150px;
+            top:3330px;
+            background-color: goldenrod;
+            color: wheat;
+            font-family: 'Open Sans', sans-serif;
+            transition: width 0.5s , 0.5s;
+            text-align: center;
+            padding-top: 5px;
+            border-radius: 4px;
+        }
+        #btnrunesguide:hover {
+            background-color: wheat;
+            color: goldenrod;
+            cursor: pointer;
+        }
+        #judulnews{
+            position: absolute;
+            left:80px;
+            top:3650px;
+            width: 400px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+            color: wheat;
+        }
+        #gambarnews1{
+            width: 390px;
+            height: 230px;
+            position: absolute;
+            left: 80px;
+            top:3800px;
+            background-image: url("pangevent.png");
+            background-size: cover;
+            transition: transform .2s;
+        }
+        #gambarnews2{
+            width: 390px;
+            height: 230px;
+            position: absolute;
+            left: 480px;
+            top:3800px;
+            background-image: url("friaevent.png");
+            background-size: cover;
+            transition: transform .2s;
+        }
+        #gambarnews3{
+            width: 390px;
+            height: 230px;
+            position: absolute;
+            left: 880px;
+            top:3800px;
+            background-image: url("sonnetevent.png");
+            background-size: cover;
+            transition: transform .2s;
+        }
+        #isinews1{
+            position: absolute;
+            left:80px;
+            top:4050px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+            color: wheat;
+            font-weight: bold;
+            text-align: left;
+            width: 390px;
+            transition: 0.5s;
+        }
+        #isinews2{
+            position: absolute;
+            left:480px;
+            top:4050px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+            color: wheat;
+            font-weight: bold;
+            text-align: left;
+            width: 390px;
+            transition: 0.5s;
+        }
+        #isinews3{
+            position: absolute;
+            left:880px;
+            top:4050px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+            color: wheat;
+            font-weight: bold;
+            text-align: left;
+            width: 390px;
+            transition: 0.5s;
+        }
+        #gambarnews1:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        #gambarnews2:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        #gambarnews3:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        #isinews1:hover {
+            color: goldenrod;
+            cursor: pointer;
+        }
+        #isinews2:hover {
+            color: goldenrod;
+            cursor: pointer;
+        }
+        #isinews3:hover {
+            color: goldenrod;
+            cursor: pointer;
+        }
+        #btnallnews{
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            stroke: silver;
+            left:1120px;
+            top:3660px;
+            background-color: goldenrod;
+            color: wheat;
+            font-family: 'Open Sans', sans-serif;
+            transition: width 0.5s , 0.5s;
+            text-align: center;
+            padding-top: 5px;
+            border-radius: 4px;
+        }
+        #btnallnews:hover {
+            background-color: wheat;
+            color: goldenrod;
+            cursor: pointer;
+        }
+        #btnallmonsters{
+            position: absolute;
+            width: 200px;
+            height: 30px;
+            stroke: silver;
+            left:1020px;
+            top:4210px;
+            background-color: goldenrod;
+            color: wheat;
+            font-family: 'Open Sans', sans-serif;
+            transition: width 0.5s , 0.5s;
+            text-align: center;
+            padding-top: 5px;
+            border-radius: 4px;
+        }
+        #btnallmonsters:hover {
+            background-color: wheat;
+            color: goldenrod;
+            cursor: pointer;
+        }
+        ::-webkit-scrollbar
+        {
+            width: 0;
+        }
+        #scrollpath{
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 100%;
+            background: rgba(225, 225, 225, 0.05);
+        }
+        #progressbar{
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 100%;
+            background: linear-gradient(to top, #008aff,#00ffe7);
+            animation: animate 5s linear infinite;
+        }
+        #scrollpath2{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 100%;
+            background: rgba(225, 225, 225, 0.05);
+        }
+        #progressbar2{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 100%;
+            background: linear-gradient(to top, #008aff,#00ffe7);
+            animation: animate 5s linear infinite;
+        }
+        @keyframes animate
+        {
+            0%,100%
+            {
+                filter: hue-rotate(0deg);
+            }
+            50%
+            {
+                filter: hue-rotate(360deg);
+            }
+        }
+        #progressbar:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top,#008aff,#00ffe7);
+            filter: blur(10px);
+        }
+        #progressbar:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top,#008aff,#00ffe7);
+            filter: blur(30px);
+        }
+        #progressbar2:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top,#008aff,#00ffe7);
+            filter: blur(10px);
+        }
+        #progressbar2:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top,#008aff,#00ffe7);
+            filter: blur(30px);
+        }
+        #backtotop{
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            background-image: url("baseline_keyboard_arrow_up_white_18dp.png");
+            background-size: contain;
+            left: 1250px;
+            top: 500px;
+        }
+        #backtotop:hover{
+            cursor: pointer;
+            animation-name: floating;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+        @keyframes floating {
+            from { transform: translate(0,  0px); }
+            65%  { transform: translate(0, 15px); }
+            to   { transform: translate(0, -0px); }    
+        }
+        #backtotoptext{
+            width: 100px;
+            height: 50px;
+            position: fixed;
+            left: 1235px;
+            top: 560px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            color: wheat;
+        }
+    </style>
+</head>
+<body style="margin: 0px;">
+    <div class="container">
+        <header style="color: wheat;font-family: 'Open Sans', sans-serif;height: 150px;">
+            <div id="logoheaderSW"></div>
+            <div id="iconfacebook"></div>
+            <div id="icontwitter"></div>
+            <div id="iconinstagram"></div>
+            <div id="iconchat"></div>
+            <div id="iconyoutube"></div>
+            <div id="icondc"></div>
+                <ul>
+                    
+                    <li><a href="#logoheaderSW" style="color:wheat;text-underline-position: above;">HOME</a></li>
+                    <li><a href="#swlistmonsters" style="color:wheat;text-underline-position: above;">MOBS</a></li>
+                    <li><a href="#" style="color:wheat;text-underline-position: above;">ABOUT</a></li>
+                    <li><a href="#judulnews" style="color:wheat;text-underline-position: above;">NEWS</a></li>
+                    <div class="underbar"></div>
+                </ul>
+            </header>
+        <div id="backgroundhead">
+            <video autoplay muted loop style="width: 100%;">
+				<source src="swc_video_20190426.mp4">
+			</video>
+        </div>
+        
+        <div id="scrollpath"></div>
+        <div id="progressbar"></div>
+        <div id="scrollpath2"></div>
+        <div id="progressbar2"></div>
+        <div id="backgroundkedua"></div>
+        <div id="backgroundkeduatransparent"></div>
+        <div id="isibackgroundkeduatransparent1"><h2>Summoners War Sky Arena Guides</h2></div>
+        <div id="isibackgroundkeduatransparent2"><h2>Here you'll find guides, tips, and Wiki information about the</h2></div>
+        <div id="isibackgroundkeduatransparent3"><h2>mobile game, Summoners War. Hope this site helps progress</h2></div>
+        <div id="isibackgroundkeduatransparent4"><h2>your account and you decide to join our community!</h2></div>
+
+        <div id="swbox1"></div>
+        <div id="judulguide1" data-aos="fade-right" data-aos-duration="500">Basic Guide To Progression</div>
+        <div id="isiguide1" data-aos="fade-right" data-aos-duration="500">Learn the fastest way to progress your Summoners War account step-by-step. Efficient farming and progression is the key to developing a strong account with powerful monsters. </div>
+        <div id="gambarguide1" data-aos="fade-left" data-aos-duration="500"></div>
+        <div id="btnguide1" data-aos="fade-right" data-aos-duration="500">Read the Guide</div>
+
+        <div id="swbox2"></div>
+        <div id="judulguide2" data-aos="fade-left" data-aos-duration="500">Rune Guide (Stats, Locations, & Builds)</div>
+        <div id="isiguide2" data-aos="fade-left" data-aos-duration="500">In this guide, I will break down what runes you can get, how to get them, which runes to use on your monsters and at the end of this guide I will show you how to get the best runes possible through efficient rune farming. </div>
+        <div id="gambarguide2" data-aos="fade-right" data-aos-duration="500"></div>
+        <div id="btnguide2" data-aos="fade-left" data-aos-duration="500">Read the Guide</div>
+
+        <div id="jumptosection">Jump to Section : </div>
+        <a href="#judullistmonsters"><div id="buttonmonster">Monster</div></a>
+        <a href="#judulnews"><div id="buttonnews">News</div></a>
+        <a href="#judulguides"><div id="buttonguides">Guides</div></a>
+        <div id="logosw"></div>
+
+        <div id="judulnews">Recent News</div>
+        <a href="News.html"><div id="gambarnews1"></div></a>
+        <div id="gambarnews2"></div>
+        <div id="gambarnews3"></div>
+        <a href="News.html"><div id="isinews1">March Hall of Heroes [Pang – Light Rakshasa]</div></a>
+        <div id="isinews2">February Hall of Heroes [Fria – Fire Sylphid]</div>
+        <div id="isinews3">January Hall of Heroes [Sonnet – Water Harp Magician]</div>
+        <div id="btnallnews">All Other News</div>
+
+        <div id="penghalangfooter"></div>
+
+        <div id="judulguides">Cairos Dungeon Guides</div>
+        <div id="subjudulguides">Farm better runes to make your monsters more powerful.</div>
+        <div id="gambargiant" data-aos="fade-right" data-aos-duration="500"></div>
+        <div id="gambardragon" data-aos="fade-up" data-aos-duration="500"></div>
+        <div id="gambarnecro" data-aos="fade-left" data-aos-duration="500"></div>
+        <div id="judulgiant" data-aos="fade-right" data-aos-duration="500">Giant's B10 Farming Guide</div>
+        <div id="juduldragon" data-aos="fade-up" data-aos-duration="500">Dragon's B10 Farming Guide</div>
+        <div id="judulnecro" data-aos="fade-left" data-aos-duration="500">Necropolis B10 Farming Guide</div>
+        <div id="isigiant" data-aos="fade-right" data-aos-duration="500">This guide will help you build an effective GB10 team so you can start farming high-quality runes.</div>
+        <div id="isidragon" data-aos="fade-up" data-aos-duration="500">This guide will help you build an effective DB10 team so you can start farming some of the best rune sets in Summoners War.</div>
+        <div id="isinecro" data-aos="fade-left" data-aos-duration="500">This guide will help you build an effective NB10 team so you can start farming runes for PvP content. </div>
+
+        <div id="runesguide"></div>
+        <div id="judulrunesguide">Get More Legend Runes Every Month!</div>
+        <div id="isirunesguide">The Rune Farming Guide will show you how to build 100% success rate speed teams that clear each dungeon in 30-40 seconds.</div>
+        <div id="gambarrunesguide"></div>
+        <a href="Runes.html"><div id="btnrunesguide">Find Out More</div>
+        </a>
+        <div id="footertambahan"></div>
+
+        <div id="swlistmonsters">
+            <div id="judullistmonsters">List of Monsters</div>
+
+            <div id="boxmonster1">
+                <div id="namamonster">BEAST RIDER</div>
+                <div id="monsterstar1"></div>
+                <div id="element1"></div>
+                <div id="element2"></div>
+                <div id="element3"></div>
+                <div id="element4"></div>
+                <div id="element5"></div>
+                <div id="bordermonster1"></div>
+                <div id="monster1"></div>
+            </div>
+            
+            <div id="boxmonster2">
+                <div id="namamonster">DEMON</div>
+                <div id="monsterstar1"></div>
+                <div id="element1"></div>
+                <div id="element2"></div>
+                <div id="element3"></div>
+                <div id="element4"></div>
+                <div id="element5"></div>
+                <div id="bordermonster2"></div>
+                <div id="monster2"></div>
+            </div>
+            
+            <div id="boxmonster3">
+                <div id="namamonster">VAMPIRE LORD</div>
+                <div id="monsterstar1"></div>
+                <a href="Detail.html"><div id="element3" style="background-image: url('dark-large.png');"></div></a>
+                <div id="bordermonster3"></div>
+                <div id="monster3"></div>
+            </div>
+
+            <div id="boxmonster4">
+                <div id="namamonster">LIGHTNING EMPEROR</div>
+                <div id="monsterstar1"></div>
+                <div id="element1"></div>
+                <div id="element2"></div>
+                <div id="element3"></div>
+                <div id="element4"></div>
+                <div id="element5"></div>
+                <div id="bordermonster4"></div>
+                <div id="monster4"></div>
+            </div>
+
+            <div id="boxmonster5">
+                <div id="namamonster">GARGOYLE</div>
+                <div id="monsterstar2"></div>
+                <div id="element1"></div>
+                <div id="element2"></div>
+                <div id="element3"></div>
+                <div id="element4"></div>
+                <div id="element5"></div>
+                <div id="bordermonster5"></div>
+                <div id="monster5"></div>
+            </div>
+            
+            <div id="boxmonster6">
+                <div id="namamonster">SNIPER MK.I</div>
+                <div id="monsterstar2"></div>
+                <div id="element1"></div>
+                <div id="element2"></div>
+                <div id="element3"></div>
+                <div id="element4"></div>
+                <div id="element5"></div>
+                <div id="bordermonster6"></div>
+                <div id="monster6"></div>
+            </div>
+        </div>
+        <div id="btnallmonsters">All Other Monsters</div>
+        <div id="boxfusion">
+            <div id="fusionchart"></div>
+            <div id="judulfusionchart">SUMMONERS WAR</div>
+            <div id="subjudulfusionchart">MONSTER FUSION CHART</div>
+            <div id="isifusionchart">The Fusion Hexagram is a building that allows you to fuse 4 and 5 star monsters. Use the Monster Fusion chart <BR> to see the recipes for all fusion monsters in Summoners War.</div>
+            <div id="btnchart">Fusion Chart</div>
+        </div>
+        <div id="footerr">
+            <div id="isifooter">All Guides © 2020 SWSA. Copyright ©Com2uS Corp. All Rights Reserved</div>
+        </div>
+        <a href="#logoheaderSW"><div id="backtotop"></div></a>
+        <div id="backtotoptext">Back to Top</div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    AOS.init({
+        duration : 1200,
+    })
+
+</script>

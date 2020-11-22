@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Lemonada|Open+Sans|Roboto&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        h1{
+            font-family: 'Open Sans', sans-serif;
+        }
+        h3{
+            font-family: 'Roboto', sans-serif;
+        }
+        .container{
+            width: 100%;
+            height: 5200px;
+            position: absolute;
+            background-color: rgb(21, 21, 21);
+        }
+        #backgroundhead{
+            width: 1200px;
+            height: 600px;
+            position: absolute;
+            background-image: url("Banner.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: 80px;
+            top:150px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style-type: none;
+            position: absolute;
+            left:500px;
+            top:30px;
+            font-size: 20px;
+
+        }
+        .underbar {
+            width: 0;
+            height: 5px;
+            background: rgba(100, 100, 200, 0);
+            top: 30px;
+            position: absolute;
+            -webkit-transition: 0.5s ease;
+        }
+        li {
+            width: 100px;
+            float: left;
+            -webkit-transition: 0.5s ease;
+            cursor: pointer;
+        }
+        li:hover {
+            text-shadow: 0px -2px 0px #000000, 0 0 5px rgba(255, 255, 255, 0.8), 0 -4px 15px rgba(255, 255, 255, 0.5);
+        }
+        li:nth-of-type(1):hover ~ .underbar {
+            left: 0;
+            width: 60px;
+            background: #6464c8;
+        }
+        li:nth-of-type(2):hover ~ .underbar {
+            left: 100px;
+            width: 60px;
+            background: #c86464;
+        }
+        li:nth-of-type(3):hover ~ .underbar {
+            left: 200px;
+            width: 67px;
+            background: yellow;
+        }
+        li:nth-of-type(4):hover ~ .underbar {
+            left: 300px;
+            width: 57px;
+            background: green;
+        }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }   
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {background-color: #ddd;}
+
+    .dropdown:hover .dropdown-content {display: block;}
+
+    .dropdown:hover .dropbtn {background-color: #3e8e41;}
+        
+        #iconfacebook{
+            position: absolute;
+            left:1010px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("fb-01.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #iconinstagram{
+            position: absolute;
+            left:1060px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("ig-01.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #icontwitter{
+            position: absolute;
+            left:1110px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("tw-01.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #iconyoutube{
+            position: absolute;
+            left:1160px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("utube.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #iconchat{
+            position: absolute;
+            left:1210px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("cht-01.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #icondc{
+            position: absolute;
+            left:1260px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("dc-01.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #iconfacebook:hover{
+            cursor: pointer;
+        }
+        #iconinstagram:hover{
+            cursor: pointer;
+        }
+        #icontwitter:hover{
+            cursor: pointer;
+        }
+        #iconyoutube:hover{
+            cursor: pointer;
+        }
+        #icondc:hover{
+            cursor: pointer;
+        }
+        #iconchat:hover{
+            cursor: pointer;
+        }
+        #logoheaderSW{
+            position: absolute;
+            left:70px;
+            top:15px;
+            width: 210px;
+            height: 50px;
+            background-image: url("logo.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        #logosw{
+            position: absolute;
+            top:300px;
+            left:400px;
+            width: 600px;
+            height: 300px;
+            background-image: url("Summoners-War-Logo.png");
+        }
+        ::-webkit-scrollbar
+        {
+            width: 0;
+        }
+        #scrollpath{
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 100%;
+            background: rgba(225, 225, 225, 0.05);
+        }
+        #progressbar{
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 100%;
+            background: linear-gradient(to top, #008aff,#00ffe7);
+            animation: animate 5s linear infinite;
+        }
+        #scrollpath2{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 100%;
+            background: rgba(225, 225, 225, 0.05);
+        }
+        #progressbar2{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 100%;
+            background: linear-gradient(to top, #008aff,#00ffe7);
+            animation: animate 5s linear infinite;
+        }
+        @keyframes animate
+        {
+            0%,100%
+            {
+                filter: hue-rotate(0deg);
+            }
+            50%
+            {
+                filter: hue-rotate(360deg);
+            }
+        }
+        #progressbar:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top,#008aff,#00ffe7);
+            filter: blur(10px);
+        }
+        #progressbar:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top,#008aff,#00ffe7);
+            filter: blur(30px);
+        }
+        #progressbar2:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top,#008aff,#00ffe7);
+            filter: blur(10px);
+        }
+        #progressbar2:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top,#008aff,#00ffe7);
+            filter: blur(30px);
+        }
+        #backtotop{
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            background-image: url("baseline_keyboard_arrow_up_white_18dp.png");
+            background-size: contain;
+            left: 1250px;
+            top: 500px;
+        }
+        #backtotop:hover{
+            cursor: pointer;
+            animation-name: floating;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+        @keyframes floating {
+            from { transform: translate(0,  0px); }
+            65%  { transform: translate(0, 15px); }
+            to   { transform: translate(0, -0px); }    
+        }
+        #backtotoptext{
+            width: 100px;
+            height: 50px;
+            position: fixed;
+            left: 1235px;
+            top: 560px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            color: wheat;
+        }
+        #footerr{
+            position: absolute;
+            width: 100%;
+            height: 50px;
+            top:5150px;
+            text-align: center;
+            color: gray;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+        }
+        #penghalangfooter{
+            position: absolute;
+            top:5100px;
+            left: 10%;
+            width: 80%;
+            height: 2px;
+            background-color: gray;
+        }
+        #footertambahan{
+            width: 110px;
+            height: 20px;
+            position: absolute;
+            top:5150px;
+            left:1000px;
+            background-image: url("c2u.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #isifooter{
+            margin-bottom: 30px;
+        }
+        #judulnews{
+            position: absolute;
+            left:920px;
+            top:200px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+        }
+        #judulnews2{
+            position: absolute;
+            left:1056px;
+            top:250px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+        }
+        #isijudul{
+            position: absolute;
+            width: 310px;
+            left:925px;
+            top:320px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: justify;
+        }
+        #isi1{
+            position: absolute;
+            width: 1060px;
+            left:150px;
+            top:450px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: justify;
+        }
+        #gambarmath{
+            width: 600px;
+            height: 400
+            position: absolute;
+            background-image: url("math.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: 360px;
+            top:850px;
+        }
+        #isi2{
+            position: absolute;
+            width: 1060px;
+            left:150px;
+            top:1250px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: justify;
+        }
+        #gambarprogress{
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            background-image: url("progress.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: 360px;
+            top:1750px;
+        }
+        #isi3{
+            position: absolute;
+            width: 1060px;
+            left:150px;
+            top:2150px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: justify;
+        }
+        #gambarrunes{
+            width: 1200px;
+            height: 400px;
+            position: absolute;
+            background-image: url("runesbg.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            left: 80px;
+            top:2500px;
+        }
+        #isigambarrunes{
+            font-family: 'Roboto', sans-serif;
+            font-size: 50px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+            margin-top: 120px;
+        }
+        #gambarteam{
+            width: 800px;
+            height: 300px;
+            position: absolute;
+            background-image: url("team.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: 80px;
+            top:3000px;
+        }
+        #judulteam{
+            position: absolute;
+            width: 600px;
+            left:650px;
+            top:3050px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: justify;
+        }
+        #gambarfastteam{
+            width: 600px;
+            height: 300px;
+            position: absolute;
+            background-image: url("fast_team.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: 720px;
+            top:3400px;
+        }
+        #judulfastteam{
+            position: absolute;
+            width: 600px;
+            left:80px;
+            top:3500px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: justify;
+        }
+        #gambarstat{
+            width: 800px;
+            height: 300px;
+            position: absolute;
+            background-image: url("stat.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: 80px;
+            top:3800px;
+        }
+        #judulstat{
+            position: absolute;
+            width: 600px;
+            left:650px;
+            top:3850px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: justify;
+        }
+        #gambaroverrunes{
+            width: 600px;
+            height: 300px;
+            position: absolute;
+            background-image: url("overrunes.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: 720px;
+            top:4200px;
+        }
+        #juduloverrunes{
+            position: absolute;
+            width: 600px;
+            left:80px;
+            top:4250px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: justify;
+        }
+        #gambartwins{
+            width: 800px;
+            height: 300px;
+            position: absolute;
+            background-image: url("twins.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: 80px;
+            top:4600px;
+        }
+        #judultwins{
+            position: absolute;
+            width: 600px;
+            left:650px;
+            top:4650px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body style="margin: 0px;">
+    <div class="container">
+        <header style="color: wheat;font-family: 'Open Sans', sans-serif;height: 150px;">
+            <div id="logoheaderSW"></div>
+            <div id="iconfacebook"></div>
+            <div id="icontwitter"></div>
+            <div id="iconinstagram"></div>
+            <div id="iconchat"></div>
+            <div id="iconyoutube"></div>
+            <div id="icondc"></div>
+                <ul>
+                    <li><a href="Home.html" style="color:wheat;text-underline-position: above;">HOME</a></li>
+                    <li><a href="#swlistmonsters" style="color:wheat;text-underline-position: above;">MOBS</a></li>
+                    <li><a href="#" style="color:wheat;text-underline-position: above;">ABOUT</a></li>
+                    <li><a href="#judulnews" style="color:wheat;text-underline-position: above;">NEWS</a></li>
+                    <div class="underbar"></div>
+                </ul>
+            </header>
+        
+        <div id="backgroundhead"></div>
+        <div id="scrollpath"></div>
+        <div id="progressbar"></div>
+        <div id="scrollpath2"></div>
+        <div id="progressbar2"></div>
+
+        <div id="penghalangfooter"></div>
+        <div id="footertambahan"></div>
+        <div id="footerr">
+            <div id="isifooter">All Guides © 2020 SWSA. Copyright ©Com2uS Corp. All Rights Reserved</div>
+        </div>
+
+        <div id="judulnews">Get More Legend Runes</div>
+        <div id="judulnews2">Every Month !</div>
+        <div id="isijudul">The Rune Farming Guide will show you to build 100% success rate speed teams that clear each dungeon in 30-40 seconds</div>
+        <div id="isi1">Getting good runes for all your monsters is the most challenging thing in Summoners War. Most players just throw leftover runes on the majority of their monsters.
+            <br><br>
+            There are two main reasons most players have poor rune quality:
+            <br><br>
+            1.They use dungeon farming teams that only have a success rate of 95% or lower.<br><br>
+            2.They don’t have speed teams that can clear dungeons in 30-40 seconds.
+            <br><br>
+            Later on down this page, I'm going to show you how I solved these problems for myself.  
+            <br><br>
+            According to SWARFARM.com, having only a 5% failure rate on your GB10, DB10, and NB10 runs – you’re losing out on over 7 legend grade runes and about 25 6-star Hero grade runes EVERY MONTH. (That’s not even counting all the Mana Stones and Mystical Scrolls you’re losing!)
+            <br><br>
+            <b>Check Out The Math:</b>
+        </div>
+        <div id="gambarmath" data-aos="fade-up" data-aos-duration="500"></div>
+        <div id="gambarprogress" data-aos="fade-up" data-aos-duration="500"></div>
+        <div id="gambarrunes" data-aos="fade-up" data-aos-duration="500">
+            <div id="isigambarrunes">Introducing the Rune <br>Farming Guide Program...</div>
+        </div>
+        <div id="gambarteam" data-aos="fade-right" data-aos-duration="500"></div>
+        <div id="gambarfastteam" data-aos="fade-left" data-aos-duration="500"></div>
+        <div id="gambarstat" data-aos="fade-right" data-aos-duration="500"></div>
+        <div id="gambaroverrunes" data-aos="fade-left" data-aos-duration="500"></div>
+        <div id="gambartwins" data-aos="fade-right" data-aos-duration="500"></div>
+        <div id="isi2" data-aos="fade-up" data-aos-duration="500">That’s roughly equal to 2x $29.99 packs worth ($59.98 total) of resources you will gain each month from increasing your success rate by just 5%!
+            <br><br>
+            <h1 style="text-align: center;margin-top: 100px;" data-aos="fade-up" data-aos-duration="500">I’ve Made Record Breaking Progress While <br>Being Free-To-Play!</h1>
+            <br>
+            <br>
+            So far I have spent less than $300 on my Summoners War account, the only things I bought were the account growth packs and two X-mas packs.
+            <br><br>
+            Despite being mostly F2P (free-to-play) I have caught up to and even surpassed most of my friends that have spent thousands of dollars on their accounts.
+            <br><br>
+            I’ve achieved record breaking progress. (You can see my profile records below)
+        </div>
+        <div id="isi3" data-aos="fade-up" data-aos-duration="500">I’ve cleared all the content in the game with SSS scores, built sub 40 second dungeon times, and finished at least Guardian 1 in all PvP content (something most people that have been playing for over 900 days have yet to accomplish).
+            <br><br>
+            I attribute all of my success to having amazing rune quality because I farm Cairos Dungeon with 100% success rate speed teams.
+            <br><br>
+            After realizing how important rune farming is I decided to test every combination of monsters and builds for every dungeon (giants, dragons, & nerco).
+            <br><br>
+            I then took that information I gathered and designed it into an online guide program that will show you how to farm runes with a 100% success rate speed team no matter what monsters you have! 
+            <br><br>
+            I’m proud to introduce you to my new online guide program that will show you how to stop throwing away all your valuable runes and resources:
+        </div>
+
+        <div id="judulteam" data-aos="fade-left" data-aos-duration="500">
+            <h1>Dungeon Teams Tier Lists</h1> 
+            <br>
+            We have developed 70+ dungeon speed teams that are 100% reliable for GB10, DB10, & NB10 – then ranked them based on speed and how good of runes you will need for that team to work.
+            <Br><br>
+            The tier list will allow you to easily figure out what is the absolute best team you can possibly build depending on what monsters you have. It will also let you know what monsters you are missing in order to build a better team.
+        </div>
+        <div id="judulfastteam" data-aos="fade-right" data-aos-duration="500">
+            <h1>Best Free-to-Play Speed Teams</h1> 
+            <br>
+            The guides include sections that will show you what the best free-to-play speed teams are, these teams only use monsters anyone can farm or fuse.
+            <Br><br>
+            We also have amazing top tier speed teams that only use farmable, fusable, or easy to obtain natural 4-star monsters.
+        </div>
+        <div id="judulstat" data-aos="fade-left" data-aos-duration="500">
+            <h1>Rune Builds & Stat Guide</h1> 
+            <br>
+            There are tons of Summoners War websites that will give you general rune and stat builds for every monster - but how you build each monster changes based on what content you’re using it for and what team you’re using it with.
+            <Br><br>
+            We include detailed rune builds and stat recommendations for every monster depending on the dungeon and team you’re using. 
+        </div>
+        <div id="juduloverrunes" data-aos="fade-right" data-aos-duration="500">
+            <h1>You Don’t Need Overpowered Runes</h1> 
+            <br>
+            We’ve designed a few top tier speed teams for each dungeon that work well even with low rune quality.
+            <Br><br>
+                If you don’t have great runes yet then you can build one of our low rune quality requirement teams that will allow you to quickly increase your rune quality.
+        </div>
+        <div id="judultwins" data-aos="fade-left" data-aos-duration="500">
+            <h1>You Don’t Need The Twins</h1> 
+            <br>
+            While the Chakram Dancer and Boomerang Warrior twins are a force to be reckoned with in pretty much all PvE content, we have found some creative teams that come pretty close to performing like a twins team.
+            <Br><br>
+                Our absolute best teams do involve the twins but we even have at least one completely free-to-play team for each dungeon that can go toe to toe with any twins team in terms of reliability and speed.
+        </div>
+
+        <a href="#logoheaderSW"><div id="backtotop"></div></a>
+        <div id="backtotoptext">Back to Top</div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    AOS.init({
+        duration : 1200,
+    })
+
+</script>

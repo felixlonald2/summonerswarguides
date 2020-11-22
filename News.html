@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Lemonada|Open+Sans|Roboto&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        h1{
+            font-family: 'Open Sans', sans-serif;
+        }
+        h3{
+            font-family: 'Roboto', sans-serif;
+        }
+        .container{
+            width: 100%;
+            height: 5500px;
+            position: absolute;
+            background-color: rgb(21, 21, 21);
+        }
+        #backgroundhead{
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            background-image: url("pangevent.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: 360px;
+            top:300px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style-type: none;
+            position: absolute;
+            left:500px;
+            top:30px;
+            font-size: 20px;
+
+        }
+        .underbar {
+            width: 0;
+            height: 5px;
+            background: rgba(100, 100, 200, 0);
+            top: 30px;
+            position: absolute;
+            -webkit-transition: 0.5s ease;
+        }
+        li {
+            width: 100px;
+            float: left;
+            -webkit-transition: 0.5s ease;
+            cursor: pointer;
+        }
+        li:hover {
+            text-shadow: 0px -2px 0px #000000, 0 0 5px rgba(255, 255, 255, 0.8), 0 -4px 15px rgba(255, 255, 255, 0.5);
+        }
+        li:nth-of-type(1):hover ~ .underbar {
+            left: 0;
+            width: 60px;
+            background: #6464c8;
+        }
+        li:nth-of-type(2):hover ~ .underbar {
+            left: 100px;
+            width: 60px;
+            background: #c86464;
+        }
+        li:nth-of-type(3):hover ~ .underbar {
+            left: 200px;
+            width: 67px;
+            background: yellow;
+        }
+        li:nth-of-type(4):hover ~ .underbar {
+            left: 300px;
+            width: 57px;
+            background: green;
+        }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }   
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {background-color: #ddd;}
+
+    .dropdown:hover .dropdown-content {display: block;}
+
+    .dropdown:hover .dropbtn {background-color: #3e8e41;}
+        
+        #iconfacebook{
+            position: absolute;
+            left:1010px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("fb-01.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #iconinstagram{
+            position: absolute;
+            left:1060px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("ig-01.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #icontwitter{
+            position: absolute;
+            left:1110px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("tw-01.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #iconyoutube{
+            position: absolute;
+            left:1160px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("utube.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #iconchat{
+            position: absolute;
+            left:1210px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("cht-01.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #icondc{
+            position: absolute;
+            left:1260px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("dc-01.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #iconfacebook:hover{
+            cursor: pointer;
+        }
+        #iconinstagram:hover{
+            cursor: pointer;
+        }
+        #icontwitter:hover{
+            cursor: pointer;
+        }
+        #iconyoutube:hover{
+            cursor: pointer;
+        }
+        #icondc:hover{
+            cursor: pointer;
+        }
+        #iconchat:hover{
+            cursor: pointer;
+        }
+        #logoheaderSW{
+            position: absolute;
+            left:70px;
+            top:15px;
+            width: 210px;
+            height: 50px;
+            background-image: url("logo.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        #logosw{
+            position: absolute;
+            top:300px;
+            left:400px;
+            width: 600px;
+            height: 300px;
+            background-image: url("Summoners-War-Logo.png");
+        }
+        ::-webkit-scrollbar
+        {
+            width: 0;
+        }
+        #scrollpath{
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 100%;
+            background: rgba(225, 225, 225, 0.05);
+        }
+        #progressbar{
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 100%;
+            background: linear-gradient(to top, #008aff,#00ffe7);
+            animation: animate 5s linear infinite;
+        }
+        #scrollpath2{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 100%;
+            background: rgba(225, 225, 225, 0.05);
+        }
+        #progressbar2{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 100%;
+            background: linear-gradient(to top, #008aff,#00ffe7);
+            animation: animate 5s linear infinite;
+        }
+        @keyframes animate
+        {
+            0%,100%
+            {
+                filter: hue-rotate(0deg);
+            }
+            50%
+            {
+                filter: hue-rotate(360deg);
+            }
+        }
+        #progressbar:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top,#008aff,#00ffe7);
+            filter: blur(10px);
+        }
+        #progressbar:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top,#008aff,#00ffe7);
+            filter: blur(30px);
+        }
+        #progressbar2:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top,#008aff,#00ffe7);
+            filter: blur(10px);
+        }
+        #progressbar2:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top,#008aff,#00ffe7);
+            filter: blur(30px);
+        }
+        #backtotop{
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            background-image: url("baseline_keyboard_arrow_up_white_18dp.png");
+            background-size: contain;
+            left: 1250px;
+            top: 500px;
+        }
+        #backtotop:hover{
+            cursor: pointer;
+            animation-name: floating;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+        @keyframes floating {
+            from { transform: translate(0,  0px); }
+            65%  { transform: translate(0, 15px); }
+            to   { transform: translate(0, -0px); }    
+        }
+        #backtotoptext{
+            width: 100px;
+            height: 50px;
+            position: fixed;
+            left: 1235px;
+            top: 560px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            color: wheat;
+        }
+        #footerr{
+            position: absolute;
+            width: 100%;
+            height: 50px;
+            top:5450px;
+            text-align: center;
+            color: gray;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+        }
+        #penghalangfooter{
+            position: absolute;
+            top:5400px;
+            left: 10%;
+            width: 80%;
+            height: 2px;
+            background-color: gray;
+        }
+        #footertambahan{
+            width: 110px;
+            height: 20px;
+            position: absolute;
+            top:5450px;
+            left:1000px;
+            background-image: url("c2u.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #isifooter{
+            margin-bottom: 30px;
+        }
+        #judulnews{
+            position: absolute;
+            left:520px;
+            top:200px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+        }
+        #isinews1{
+            position: absolute;
+            width: 1000px;
+            left:150px;
+            top:700px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: justify;
+        }
+        #isinews2{
+            position: absolute;
+            width: 1000px;
+            left:150px;
+            top:950px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: justify;
+        }
+        #subjudul1{
+            position: absolute;
+            left:600px;
+            top:900px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+            transition: 0.5s;
+        }
+        #subjudul2{
+            position: absolute;
+            left:635px;
+            top:1100px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+            transition: 0.5s;
+        }
+        #gambarsubjudul2{
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            background-image: url("s1.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: 360px;
+            top:1150px;
+        }
+        #isisubjudul2{
+            position: absolute;
+            width: 1000px;
+            left:150px;
+            top:1530px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: justify;
+        }
+        #subjudul3{
+            position: absolute;
+            left:635px;
+            top:1700px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+            transition: 0.5s;
+        }
+        #gambarsubjudul3{
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            background-image: url("s2.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: 360px;
+            top:1750px;
+        }
+        #isisubjudul3{
+            position: absolute;
+            width: 1000px;
+            left:150px;
+            top:2130px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: justify;
+        }
+        #subjudul4{
+            position: absolute;
+            left:635px;
+            top:2400px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+            transition: 0.5s;
+        }
+        #gambarsubjudul4{
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            background-image: url("s3.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: 360px;
+            top:2450px;
+        }
+        #isisubjudul4{
+            position: absolute;
+            width: 1000px;
+            left:150px;
+            top:2830px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: justify;
+        }
+        #subjudul5{
+            position: absolute;
+            left:635px;
+            top:3100px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+            transition: 0.5s;
+        }
+        #gambarsubjudul5{
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            background-image: url("s4.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: 360px;
+            top:3150px;
+        }
+        #isisubjudul5{
+            position: absolute;
+            width: 1000px;
+            left:150px;
+            top:3530px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: justify;
+        }
+        #subjudul6{
+            position: absolute;
+            left:635px;
+            top:3800px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+            transition: 0.5s;
+        }
+        #gambarsubjudul6{
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            background-image: url("s5.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: 360px;
+            top:3850px;
+        }
+        #isisubjudul6{
+            position: absolute;
+            width: 1000px;
+            left:150px;
+            top:4230px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: justify;
+        }
+        #subjudul7{
+            position: absolute;
+            left:620px;
+            top:4500px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+            transition: 0.5s;
+        }
+        #gambarsubjudul7{
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            background-image: url("s6.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: 360px;
+            top:4550px;
+        }
+        #isisubjudul7{
+            position: absolute;
+            width: 1000px;
+            left:150px;
+            top:4930px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body style="margin: 0px;">
+    <div class="container">
+        <header style="color: wheat;font-family: 'Open Sans', sans-serif;height: 150px;">
+            <div id="logoheaderSW"></div>
+            <div id="iconfacebook"></div>
+            <div id="icontwitter"></div>
+            <div id="iconinstagram"></div>
+            <div id="iconchat"></div>
+            <div id="iconyoutube"></div>
+            <div id="icondc"></div>
+                <ul>
+                    <li><a href="Home.html" style="color:wheat;text-underline-position: above;">HOME</a></li>
+                    <li><a href="#swlistmonsters" style="color:wheat;text-underline-position: above;">MOBS</a></li>
+                    <li><a href="#" style="color:wheat;text-underline-position: above;">ABOUT</a></li>
+                    <li><a href="#judulnews" style="color:wheat;text-underline-position: above;">NEWS</a></li>
+                    <div class="underbar"></div>
+                </ul>
+            </header>
+        
+        <div id="backgroundhead"></div>
+        <div id="scrollpath"></div>
+        <div id="progressbar"></div>
+        <div id="scrollpath2"></div>
+        <div id="progressbar2"></div>
+
+        <div id="penghalangfooter"></div>
+        <div id="footertambahan"></div>
+        <div id="footerr">
+            <div id="isifooter">All Guides © 2020 SWSA. Copyright ©Com2uS Corp. All Rights Reserved</div>
+        </div>
+
+        <div id="judulnews">March Hall of Heroes <br> [Pang – Light Rakshasa]</div>
+        <div id="isinews1">On Wednesday, March the 11th, the Pang (light Rakshasa) Hall of Heroes was announced. I’m actually really excited about this, because Pang’s really good! I’m sh00k. Can’t wait to build my own Pang!
+            Before we begin, Hall of Heroes is a lot like Trial of Ascension, so that means you can use Trial of Ascension strategy and monsters (e.g. attack bar pushbacks, stuns and continuous damage are king). I strongly advise bringing your regular Trial of Ascension team. In my case, I’m using Baretta (L), Charlotte, Rica, Frigate, and Verad.
+            Yeah, I love my Rica.
+        </div>
+        <div id="subjudul1" data-aos="fade-up" data-aos-duration="500">Is Pang Usable ? </div>
+        <div id="isinews2" data-aos="fade-up" data-aos-duration="500">Yes! Yes, yes, yes! She’s really good! I’m actually surprised Com2uS is giving out a whole 5-10 Pangs as HoH. It’s mainly because of her passive, Cruel Whip, which not only shortens the duration of buffs on the enemy she attacks by 1 turn, but also extends the duration of debuffs on the enemy by 1 turn.
+            I would definitely keep at least one copy of Pang, unless you already have one. In which case I am so sorry.
+        </div>
+        <div id="subjudul2" data-aos="fade-up" data-aos-duration="500">Stage 1 </div>
+        <div id="gambarsubjudul2" data-aos="fade-up" data-aos-duration="500"></div>
+        <div id="isisubjudul2" data-aos="fade-up" data-aos-duration="500">Let’s begin at the beginning! Here, we’ll start with three Hwas (fire Rakshasas) two Sohas (water Nine-tailed Foxes).
+            The Threat: Uuuuugh. I hate dealing with Soha here. Basically, her third skill Cleanse attacks all enemies, removing all beneficial effects off of them. She also removes one harmful effect off of all her allies afterwards. Hwa, meanwhile, is more of a single-target damage-dealer. Her passive Burning Whip decreases the enemy’s attack bar by 25% per hit, and strikes again with a 25% chance.
+            The Solution: Take out Soha first. She’s the only one who attacks AoE in this stage, and then you can easily go for Hwa.
+        </div>
+        <div id="subjudul3" data-aos="fade-up" data-aos-duration="500">Stage 2 </div>
+        <div id="gambarsubjudul3" data-aos="fade-up" data-aos-duration="500"></div>
+        <div id="isisubjudul3" data-aos="fade-up" data-aos-duration="500">Stage 2 has arrived! Here, we have three Sus (water Rakshasas) and two Morrises (Wind Dice Magicians).
+            The Threat: I’m gonna have to say that Su is a threat. I’ve actually built a Su before, in my super early-game stage before I could even GB10, and I remember she’s pretty good. Her third skill, Delicate Whip, attacks an enemy and recovers 50% of the inflicted damage. She guarantees to stun the enemy if they have a harmful effect, but the damage is doubled by 50% if the enemy is immune to being stunned.
+            Morris is a passive reviver. His passive, To Live or to Die, rolls 2 dice at the start of each turn. If he gets the same number on both dice, he’ll revive all dead allies. The allies will be revived with more HP the higher the dice number is.
+            The Solution: Take out both Morrises first. They’re so annoying, I swear, I just want to scream. I don’t remember how many times I’ve gotten everyone taken out, only for Morris to revive everyone. It really sucks.
+        </div>
+        <div id="subjudul4" data-aos="fade-up" data-aos-duration="500">Stage 3 </div>
+        <div id="gambarsubjudul4" data-aos="fade-up" data-aos-duration="500"></div>
+        <div id="isisubjudul4" data-aos="fade-up" data-aos-duration="500">Miniboss time! Here we have one Qitian Dasheng (light Monkey King) and two Berings (dark Kobold Bombers).
+            The Threat: Qitian Dasheng’s third skill, Giant Net (NOW LOOK AT THIS NET THAT I JUST FOUND-) attacks all enemies, putting them to sleep for 1 turn and also decreasing their speed for 2 turns. The damage is also based off his Max HP, whoopdy doo! /s
+            Bering, meanwhile, has Magic Exterminator. He attacks all enemies, removing one beneficial effect for them and applying Silence on everyone for 2 turns. It really hurts.
+            The Solution: Definitely go for Dasheng first. You actually don’t have to kill the lackeys when it came to minibosses and bosses, but if you want to, you can take out the Berings. That’s about it.
+        </div>
+        <div id="subjudul5" data-aos="fade-up" data-aos-duration="500">Stage 4 </div>
+        <div id="gambarsubjudul5" data-aos="fade-up" data-aos-duration="500"></div>
+        <div id="isisubjudul5" data-aos="fade-up" data-aos-duration="500">Stage 4! This stage is made of three Yens (wind Rakshasas) and two Claras (fire Pierrets).
+            The Threat: Yen’s passive, Dancing Whip, is actually really annoying to deal with. Her passive grants her a 20% chance to gain an extra turn at the end of her turn, and the chance increases by 20% every time her passive doesn’t activate. This chance resets if she does hit an extra turn.          
+            Clara, meanwhile, had her third skill changed quite a few times. Now, Wheel of Fire attacks all enemies 3 times, with each strike having a 30% chance to remove a buff off the enemy and stun them for 1 turn. She also increases her speed for 2 turns if she’s at full HP. It’s all bonkers, to be honest. I remember when she used to extend debuffs on enemies.
+            The Solution: Take out Yen first. I really don’t like how Yen basically is guaranteed to get a turn if you’re not careful, so just go and out-right kill them. Clara isn’t that bad if you just keep her out of her full HP bar, so don’t worry about her too much.
+        </div>
+        <div id="subjudul6" data-aos="fade-up" data-aos-duration="500">Stage 5 </div>
+        <div id="gambarsubjudul6" data-aos="fade-up" data-aos-duration="500"></div>
+        <div id="isisubjudul6" data-aos="fade-up" data-aos-duration="500">We’ve only got one more stage left before the boss! Here, we have three Rans (dark Rakshasas) and two Chasuns (wind Sky Dancers).
+            The Threat: Did you know that Ran is the only one of the Rakshasas with a tattoo? It’s true: she has a butterfly tattoo on her thigh. Anyway, I’m going to have to say that Ran is one of the bigger threats here, because Chasun is actually just a healer, while Ran actually does damage.        
+            Her third skill, Devil’s Whip, attacks an enemy four times, which has a 75% chance to decrease the enemy’s attack bar by 30% per hit. She has a guaranteed chance to stun if she depletes the enemy’s attack bar, though. Not only is her damage really good, but she also has a super good chance to stun your ally if she doesn’t outright kill them.
+            Chasun, meanwhile, has sorta fallen out of the meta? But like, she’s still a good healer. I’ve built my own Chasun for Wind Rift. Her second skill heals everyone by 20% of her Max HP, granting Attack Power on everyone for 2 turns. Her third skill Fallen Blossoms then balances her HP and her ally’s HP to something higher than before, along with their attack bars. It goes through healblock, too, which always sucks.
+            The Solution: Stun the Chasuns. Seriously, they’re so damn annoying to deal with. Definitely kill Ran first, but make sure that Chasun will never get a turn while you’re at it.            
+        </div>
+        <div id="subjudul7" data-aos="fade-up" data-aos-duration="500">Final Stage</div>
+        <div id="gambarsubjudul7" data-aos="fade-up" data-aos-duration="500"></div>
+        <div id="isisubjudul7" data-aos="fade-up" data-aos-duration="500">Okay, boss time, everyone! The boss is, of course, Pang, and her lackeys will always differ in elements. This time, though, we have a Hwa and a Yen.
+            The Threat: As always, the threat differs because the lackeys differ. In this case, the biggest threat is Hwa, then Pang, and then Yen. (Seriously, Hwa hits really hard in the higher levels.)
+            The Solution: Because the threat always is different, the solution is always different. In this case, I’d go for Hwa first if this were a higher level, stun Yen, and then go for Pang. However, you could just always hit Pang, kill her, and be done with it, because you don’t need to kill the lackeys.
+            I hope you liked this article! How many Pangs did you guys get? Let me know in the comments down below! As of right now, I’m at B4, so I only have two. But for now, I’m Sara Ann, and I’ll see you in the next article!
+        </div>
+
+        <a href="#logoheaderSW"><div id="backtotop"></div></a>
+        <div id="backtotoptext">Back to Top</div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    AOS.init({
+        duration : 1200,
+    })
+
+</script>

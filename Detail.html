@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Lemonada|Open+Sans|Roboto&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        h1{
+            font-family: 'Open Sans', sans-serif;
+        }
+        h3{
+            font-family: 'Roboto', sans-serif;
+        }
+        .container{
+            width: 100%;
+            height: 3400px;
+            position: absolute;
+            background-color: rgb(21, 21, 21);
+        }
+        #backgroundhead{
+            width: 1200px;
+            height: 250px;
+            position: absolute;
+            background-image: url("bgeirgar.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            left: 80px;
+            top:150px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style-type: none;
+            position: absolute;
+            left:500px;
+            top:30px;
+            font-size: 20px;
+
+        }
+        .underbar {
+            width: 0;
+            height: 5px;
+            background: rgba(100, 100, 200, 0);
+            top: 30px;
+            position: absolute;
+            -webkit-transition: 0.5s ease;
+        }
+        li {
+            width: 100px;
+            float: left;
+            -webkit-transition: 0.5s ease;
+            cursor: pointer;
+        }
+        li:hover {
+            text-shadow: 0px -2px 0px #000000, 0 0 5px rgba(255, 255, 255, 0.8), 0 -4px 15px rgba(255, 255, 255, 0.5);
+        }
+        li:nth-of-type(1):hover ~ .underbar {
+            left: 0;
+            width: 60px;
+            background: #6464c8;
+        }
+        li:nth-of-type(2):hover ~ .underbar {
+            left: 100px;
+            width: 60px;
+            background: #c86464;
+        }
+        li:nth-of-type(3):hover ~ .underbar {
+            left: 200px;
+            width: 67px;
+            background: yellow;
+        }
+        li:nth-of-type(4):hover ~ .underbar {
+            left: 300px;
+            width: 57px;
+            background: green;
+        }
+
+    
+        
+        #iconfacebook{
+            position: absolute;
+            left:1010px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("fb-01.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #iconinstagram{
+            position: absolute;
+            left:1060px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("ig-01.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #icontwitter{
+            position: absolute;
+            left:1110px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("tw-01.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #iconyoutube{
+            position: absolute;
+            left:1160px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("utube.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #iconchat{
+            position: absolute;
+            left:1210px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("cht-01.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #icondc{
+            position: absolute;
+            left:1260px;
+            top:30px;
+            width: 30px;
+            height: 30px;
+            background-image: url("dc-01.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #iconfacebook:hover{
+            cursor: pointer;
+        }
+        #iconinstagram:hover{
+            cursor: pointer;
+        }
+        #icontwitter:hover{
+            cursor: pointer;
+        }
+        #iconyoutube:hover{
+            cursor: pointer;
+        }
+        #icondc:hover{
+            cursor: pointer;
+        }
+        #iconchat:hover{
+            cursor: pointer;
+        }
+        #logoheaderSW{
+            position: absolute;
+            left:70px;
+            top:15px;
+            width: 210px;
+            height: 50px;
+            background-image: url("logo.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        #logosw{
+            position: absolute;
+            top:300px;
+            left:400px;
+            width: 600px;
+            height: 300px;
+            background-image: url("Summoners-War-Logo.png");
+        }
+        ::-webkit-scrollbar
+        {
+            width: 0;
+        }
+        #scrollpath{
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 100%;
+            background: rgba(225, 225, 225, 0.05);
+        }
+        #progressbar{
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 100%;
+            background: linear-gradient(to top, #008aff,#00ffe7);
+            animation: animate 5s linear infinite;
+        }
+        #scrollpath2{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 100%;
+            background: rgba(225, 225, 225, 0.05);
+        }
+        #progressbar2{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 100%;
+            background: linear-gradient(to top, #008aff,#00ffe7);
+            animation: animate 5s linear infinite;
+        }
+        @keyframes animate
+        {
+            0%,100%
+            {
+                filter: hue-rotate(0deg);
+            }
+            50%
+            {
+                filter: hue-rotate(360deg);
+            }
+        }
+        #progressbar:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top,#008aff,#00ffe7);
+            filter: blur(10px);
+        }
+        #progressbar:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top,#008aff,#00ffe7);
+            filter: blur(30px);
+        }
+        #progressbar2:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top,#008aff,#00ffe7);
+            filter: blur(10px);
+        }
+        #progressbar2:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top,#008aff,#00ffe7);
+            filter: blur(30px);
+        }
+        #backtotop{
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            background-image: url("baseline_keyboard_arrow_up_white_18dp.png");
+            background-size: contain;
+            left: 1250px;
+            top: 500px;
+        }
+        #backtotop:hover{
+            cursor: pointer;
+            animation-name: floating;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+        @keyframes floating {
+            from { transform: translate(0,  0px); }
+            65%  { transform: translate(0, 15px); }
+            to   { transform: translate(0, -0px); }    
+        }
+        #backtotoptext{
+            width: 100px;
+            height: 50px;
+            position: fixed;
+            left: 1235px;
+            top: 560px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            color: wheat;
+        }
+        #footerr{
+            position: absolute;
+            width: 100%;
+            height: 50px;
+            top:3350px;
+            text-align: center;
+            color: gray;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+        }
+        #penghalangfooter{
+            position: absolute;
+            top:3300px;
+            left: 10%;
+            width: 80%;
+            height: 2px;
+            background-color: gray;
+        }
+        #footertambahan{
+            width: 110px;
+            height: 20px;
+            position: absolute;
+            top:3350px;
+            left:1000px;
+            background-image: url("c2u.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #isifooter{
+            margin-bottom: 30px;
+        }
+        #monster1{
+            width: 100px ;
+            height: 100px;
+            position: absolute;
+            background-image: url("vampirelord.png");
+            border-radius: 50%;
+            left:1030px;
+            top: 220px;
+        }
+        #monster2{
+            width: 100px ;
+            height: 100px;
+            position: absolute;
+            background-image: url("eirgar.png");
+            border-radius: 50%;
+            left:1150px;
+            top: 220px;
+        }
+        #namamonster{
+            position: absolute;
+            left:160px;
+            top:230px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+            color: rgb(182, 171, 106);
+            text-align: center;
+        }
+        #namamonsterawaken{
+            position: absolute;
+            left:160px;
+            top:250px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 50px;
+            color: silver;
+            font-weight: bold;
+            text-align: center;
+        }
+        #star{
+            position: absolute;
+            left: 160px;
+            top: 320px;
+            width: 160px;
+            height: 30px;
+            background-image: url("star.png");
+            background-size: contain;
+        }
+        #tipemonster{
+            position: absolute;
+            left:330px;
+            top:322px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+            color: silver;
+            text-align: center;
+        }
+        #jumptosection{
+            position: absolute;
+            left:600px;
+            top:450px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: wheat;
+            text-align: center;
+        }
+        #btnSkill{
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            stroke: silver;
+            left:100px;
+            top:550px;
+            background-color: goldenrod;
+            color: wheat;
+            font-family: 'Open Sans', sans-serif;
+            transition: width 0.5s , 0.5s;
+            text-align: center;
+            padding-top: 5px;
+            border-radius: 4px;
+        }
+        #btnSkill:hover {
+            background-color: wheat;
+            color: goldenrod;
+            cursor: pointer;
+        }
+        #btnAwaken{
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            stroke: silver;
+            left:300px;
+            top:550px;
+            background-color: goldenrod;
+            color: wheat;
+            font-family: 'Open Sans', sans-serif;
+            transition: width 0.5s , 0.5s;
+            text-align: center;
+            padding-top: 5px;
+            border-radius: 4px;
+        }
+        #btnAwaken:hover {
+            background-color: wheat;
+            color: goldenrod;
+            cursor: pointer;
+        }
+        #btnDevilmon{
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            stroke: silver;
+            left:500px;
+            top:550px;
+            background-color: goldenrod;
+            color: wheat;
+            font-family: 'Open Sans', sans-serif;
+            transition: width 0.5s , 0.5s;
+            text-align: center;
+            padding-top: 5px;
+            border-radius: 4px;
+        }
+        #btnDevilmon:hover {
+            background-color: wheat;
+            color: goldenrod;
+            cursor: pointer;
+        }
+        #btnRating{
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            stroke: silver;
+            left:700px;
+            top:550px;
+            background-color: goldenrod;
+            color: wheat;
+            font-family: 'Open Sans', sans-serif;
+            transition: width 0.5s , 0.5s;
+            text-align: center;
+            padding-top: 5px;
+            border-radius: 4px;
+        }
+        #btnRating:hover {
+            background-color: wheat;
+            color: goldenrod;
+            cursor: pointer;
+        }
+        #btnRunes{
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            stroke: silver;
+            left:900px;
+            top:550px;
+            background-color: goldenrod;
+            color: wheat;
+            font-family: 'Open Sans', sans-serif;
+            transition: width 0.5s , 0.5s;
+            text-align: center;
+            padding-top: 5px;
+            border-radius: 4px;
+        }
+        #btnRunes:hover {
+            background-color: wheat;
+            color: goldenrod;
+            cursor: pointer;
+        }
+        #btnStats{
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            stroke: silver;
+            left:1100px;
+            top:550px;
+            background-color: goldenrod;
+            color: wheat;
+            font-family: 'Open Sans', sans-serif;
+            transition: width 0.5s , 0.5s;
+            text-align: center;
+            padding-top: 5px;
+            border-radius: 4px;
+        }
+        #btnStats:hover {
+            background-color: wheat;
+            color: goldenrod;
+            cursor: pointer;
+        }
+        #penghalangskills{
+            position: absolute;
+            top:700px;
+            left: 10%;
+            width: 30%;
+            height: 2px;
+            background-color: gray;
+        }
+        #penghalangskills2{
+            position: absolute;
+            top:700px;
+            left: 60%;
+            width: 30%;
+            height: 2px;
+            background-color: gray;
+        }
+        #judulskills{
+            position: absolute;
+            left:605px;
+            top:665px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 50px;
+            color: silver;
+            font-weight: bold;
+            text-align: center;
+        }
+        #gambarleader{
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            background-image: url("leader.png");
+            background-size: contain;
+            top:800px;
+            left: 95px;
+        }
+        #judulleader{
+            position: absolute;
+            width: 250px;
+            left:95px;
+            top:870px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: justify;
+        }
+        #gambarskill1{
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            background-image: url("skill1.png");
+            background-size: contain;
+            top:800px;
+            left: 400px;
+        }
+        #judulskill1{
+            position: absolute;
+            width: 250px;
+            left:400px;
+            top:870px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: justify;
+        }
+        #gambarskill2{
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            background-image: url("skill2.png");
+            background-size: contain;
+            top:800px;
+            left: 700px;
+        }
+        #judulskill2{
+            position: absolute;
+            width: 250px;
+            left:700px;
+            top:870px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: justify;
+        }
+        #gambardebuff1{
+            height: 25px;
+            width: 25px;
+            position: absolute;
+            background-image: url("Block-Beneficial-Effects.png");
+            background-size: contain;
+            top:868px;
+            left: 825px;
+        }
+        #gambardebuff2{
+            height: 25px;
+            width: 25px;
+            position: absolute;
+            background-image: url("Reduce-Speed.png");
+            background-size: contain;
+            top:868px;
+            left: 875px;
+        }
+        #gambardebuff3{
+            height: 25px;
+            width: 25px;
+            position: absolute;
+            background-image: url("Reduce-ATK.png");
+            background-size: contain;
+            top:868px;
+            left: 925px;
+        }
+        #gambarskill3{
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            background-image: url("skill3.png");
+            background-size: contain;
+            top:800px;
+            left: 1000px;
+        }
+        #judulskill3{
+            position: absolute;
+            width: 250px;
+            left:1000px;
+            top:870px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: justify;
+        }
+        #gambarbuff1{
+            height: 25px;
+            width: 25px;
+            position: absolute;
+            background-image: url("icon_duration_vampire-50x50.png");
+            background-size: contain;
+            top:868px;
+            left: 1175px;
+        }
+        #gambarbuff2{
+            height: 25px;
+            width: 25px;
+            position: absolute;
+            background-image: url("Increase-ATK.png");
+            background-size: contain;
+            top:868px;
+            left: 1225px;
+        }
+        #penghalangawaken{
+            position: absolute;
+            top:1300px;
+            left: 10%;
+            width: 30%;
+            height: 2px;
+            background-color: gray;
+        }
+        #penghalangawaken2{
+            position: absolute;
+            top:1300px;
+            left: 60%;
+            width: 30%;
+            height: 2px;
+            background-color: gray;
+        }
+        #judulawaken{
+            position: absolute;
+            left:585px;
+            top:1265px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 50px;
+            color: silver;
+            text-align: center;
+        }
+        #isiawaken{
+            position: absolute;
+            left:525px;
+            top:1400px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            color: wheat;
+            text-align: center;
+        }
+        #gambarskillawaken{
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            background-image: url("skillawaken.png");
+            background-size: contain;
+            top:1510px;
+            left: 665px;
+        }
+        #gambaressence1{
+            height: 25px;
+            width: 25px;
+            position: absolute;
+            background-image: url("essence-of-magic-mid.png");
+            background-size: contain;
+            top:1650px;
+            left: 130px;
+        }
+        #isiessence1{
+            position: absolute;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: center;
+            top:1650px;
+            left: 170px;
+        }
+        #gambaressence2{
+            height: 25px;
+            width: 25px;
+            position: absolute;
+            background-image: url("essence-of-magic-high.png");
+            background-size: contain;
+            top:1650px;
+            left: 400px;
+        }
+        #isiessence2{
+            position: absolute;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: center;
+            top:1650px;
+            left: 440px;
+        }
+        #gambaressence3{
+            height: 25px;
+            width: 25px;
+            position: absolute;
+            background-image: url("essence-of-darkness-mid.png");
+            background-size: contain;
+            top:1650px;
+            left: 680px;
+        }
+        #isiessence3{
+            position: absolute;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: center;
+            top:1650px;
+            left: 720px;
+        }
+        #gambaressence4{
+            height: 25px;
+            width: 25px;
+            position: absolute;
+            background-image: url("essence-of-darkness-high.png");
+            background-size: contain;
+            top:1650px;
+            left: 960px;
+        }
+        #isiessence4{
+            position: absolute;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: center;
+            top:1650px;
+            left: 1000px;
+        }
+        #penghalangdevilmon{
+            position: absolute;
+            top:1800px;
+            left: 10%;
+            width: 30%;
+            height: 2px;
+            background-color: gray;
+        }
+        #penghalangdevilmon2{
+            position: absolute;
+            top:1800px;
+            left: 60%;
+            width: 30%;
+            height: 2px;
+            background-color: gray;
+        }
+        #juduldevilmon{
+            position: absolute;
+            left:570px;
+            top:1770px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 40px;
+            color: silver;
+            text-align: center;
+        }
+        #isidevilmon{
+            position: absolute;
+            left:580px;
+            top:1900px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: center;
+        }
+        #gambardevilmon{
+            height: 150px;
+            width: 250px;
+            position: absolute;
+            background-image: url("devilmon.png");
+            background-size: cover;
+            top:1850px;
+            left: 205px;
+        }
+        #gambarvampire{
+            height: 250px;
+            width: 250px;
+            position: absolute;
+            background-image: url("vampire.png");
+            background-size: cover;
+            top:1820px;
+            left: 850px;
+        }
+        #penghalangrating{
+            position: absolute;
+            top:2150px;
+            left: 10%;
+            width: 30%;
+            height: 2px;
+            background-color: gray;
+        }
+        #penghalangrating2{
+            position: absolute;
+            top:2150px;
+            left: 60%;
+            width: 30%;
+            height: 2px;
+            background-color: gray;
+        }
+        #judulrating{
+            position: absolute;
+            left:600px;
+            top:2115px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 50px;
+            color: silver;
+            text-align: center;
+        }
+        #isirating{
+            position: absolute;
+            left:380px;
+            top:2300px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: wheat;
+            text-align: justify;
+        }
+        #star1{
+            position: absolute;
+            left: 650px;
+            top: 2295px;
+            width: 300px;
+            height: 30px;
+            background-image: url("unfilledstar.png");
+            background-size: contain;
+        }
+        #star1{
+            position: absolute;
+            left: 650px;
+            top: 2295px;
+            width: 300px;
+            height: 30px;
+            background-image: url("unfilledstar.png");
+            background-size: contain;
+        }
+        #star1{
+            position: absolute;
+            left: 650px;
+            top: 2295px;
+            width: 300px;
+            height: 30px;
+            background-image: url("unfilledstar.png");
+            background-size: contain;
+        }
+        #star1{
+            position: absolute;
+            left: 650px;
+            top: 2295px;
+            width: 300px;
+            height: 30px;
+            background-image: url("unfilledstar.png");
+            background-size: contain;
+        }
+        #star1{
+            position: absolute;
+            left: 650px;
+            top: 2295px;
+            width: 287px;
+            height: 30px;
+            background-image: url("star.png");
+            background-size: contain;
+        }
+        #star2{
+            position: absolute;
+            left: 650px;
+            top: 2337px;
+            width: 257px;
+            height: 30px;
+            background-image: url("star.png");
+            background-size: contain;
+        }
+        #star3{
+            position: absolute;
+            left: 650px;
+            top: 2380px;
+            width: 225px;
+            height: 30px;
+            background-image: url("star.png");
+            background-size: contain;
+        }
+        #star4{
+            position: absolute;
+            left: 650px;
+            top: 2423px;
+            width: 225px;
+            height: 30px;
+            background-image: url("star.png");
+            background-size: contain;
+        }
+        #star5{
+            position: absolute;
+            left: 650px;
+            top: 2468px;
+            width: 257px;
+            height: 30px;
+            background-image: url("star.png");
+            background-size: contain;
+        }
+        #star6{
+            position: absolute;
+            left: 650px;
+            top: 2513px;
+            width: 30px;
+            height: 30px;
+            background-image: url("star.png");
+            background-size: contain;
+        }
+        #star7{
+            position: absolute;
+            left: 650px;
+            top: 2558px;
+            width: 225px;
+            height: 30px;
+            background-image: url("star.png");
+            background-size: contain;
+        }
+        #penghalangrunes{
+            position: absolute;
+            top:2700px;
+            left: 10%;
+            width: 30%;
+            height: 2px;
+            background-color: gray;
+        }
+        #penghalangrunes2{
+            position: absolute;
+            top:2700px;
+            left: 60%;
+            width: 30%;
+            height: 2px;
+            background-color: gray;
+        }
+        #judulrunes{
+            position: absolute;
+            left:608px;
+            top:2670px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 50px;
+            color: silver;
+            text-align: center;
+        }
+        #isirunes1{
+            position: absolute;
+            left:290px;
+            top:2770px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+            color: wheat;
+            text-align: center;
+        }
+        #isirunes2{
+            position: absolute;
+            left:980px;
+            top:2770px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+            color: wheat;
+            text-align: center;
+        }
+        #gambarrunes1{
+            height: 250px;
+            width: 250px;
+            position: absolute;
+            background-image: url("rune_slots_filled.png");
+            background-size: cover;
+            top:2820px;
+            left: 220px;
+        }
+        #gambarrunes2{
+            height: 250px;
+            width: 250px;
+            position: absolute;
+            background-image: url("rune_slots_filled.png");
+            background-size: cover;
+            top:2820px;
+            left: 900px;
+        }
+        #runes1slot1{
+            position: absolute;
+            left: 330px;
+            top: 2860px;
+            width: 30px;
+            height: 30px;
+            background-image: url("fatal.png");
+            background-size: contain;
+        }
+        #runes1slot2{
+            position: absolute;
+            left: 375px;
+            top: 2890px;
+            width: 30px;
+            height: 30px;
+            background-image: url("fatal.png");
+            background-size: contain;
+        }
+        #runes1slot3{
+            position: absolute;
+            left: 380px;
+            top: 2940px;
+            width: 30px;
+            height: 35px;
+            background-image: url("energy.png");
+            background-size: cover;
+        }
+        #runes1slot4{
+            position: absolute;
+            left: 330px;
+            top: 2970px;
+            width: 30px;
+            height: 30px;
+            background-image: url("fatal.png");
+            background-size: contain;
+        }
+        #runes1slot5{
+            position: absolute;
+            left: 283px;
+            top: 2940px;
+            width: 30px;
+            height: 35px;
+            background-image: url("energy.png");
+            background-size: cover;
+        }
+        #runes1slot6{
+            position: absolute;
+            left: 285px;
+            top: 2890px;
+            width: 30px;
+            height: 30px;
+            background-image: url("fatal.png");
+            background-size: contain;
+        }
+
+        #runes2slot1{
+            position: absolute;
+            left: 1013px;
+            top: 2860px;
+            width: 30px;
+            height: 35px;
+            background-image: url("violent.png");
+            background-size: contain;
+        }
+        #runes2slot2{
+            position: absolute;
+            left: 1060px;
+            top: 2885px;
+            width: 30px;
+            height: 35px;
+            background-image: url("violent.png");
+            background-size: contain;
+        }
+        #runes2slot3{
+            position: absolute;
+            left: 1060px;
+            top: 2940px;
+            width: 30px;
+            height: 35px;
+            background-image: url("nemesis.png");
+            background-size: cover;
+        }
+        #runes2slot4{
+            position: absolute;
+            left: 1012px;
+            top: 2970px;
+            width: 30px;
+            height: 35px;
+            background-image: url("violent.png");
+            background-size: contain;
+        }
+        #runes2slot5{
+            position: absolute;
+            left: 963px;
+            top: 2940px;
+            width: 30px;
+            height: 35px;
+            background-image: url("nemesis.png");
+            background-size: cover;
+        }
+        #runes2slot6{
+            position: absolute;
+            left: 965px;
+            top: 2885px;
+            width: 30px;
+            height: 35px;
+            background-image: url("violent.png");
+            background-size: contain;
+        }
+        #textrunes1{
+            position: absolute;
+            left:170px;
+            top:2850px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+            color: wheat;
+            text-align: center;
+        }
+        #textrunes2{
+            position: absolute;
+            left:470px;
+            top:2850px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+            color: wheat;
+            text-align: center;
+        }
+        #textrunes3{
+            position: absolute;
+            left:295px;
+            top:3050px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+            color: wheat;
+            text-align: center;
+        }
+        #textrunes4{
+            position: absolute;
+            left:840px;
+            top:2850px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+            color: wheat;
+            text-align: center;
+        }
+        #textrunes5{
+            position: absolute;
+            left:1140px;
+            top:2850px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+            color: wheat;
+            text-align: center;
+        }
+        #textrunes6{
+            position: absolute;
+            left:965px;
+            top:3050px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+            color: wheat;
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="margin: 0px;">
+    <div class="container">
+        <header style="color: wheat;font-family: 'Open Sans', sans-serif;height: 150px;">
+            <div id="logoheaderSW"></div>
+            <div id="iconfacebook"></div>
+            <div id="icontwitter"></div>
+            <div id="iconinstagram"></div>
+            <div id="iconchat"></div>
+            <div id="iconyoutube"></div>
+            <div id="icondc"></div>
+                <ul>
+                    <li><a href="Home.html" style="color:wheat;text-underline-position: above;">HOME</a></li>
+                    <li><a href="#swlistmonsters" style="color:wheat;text-underline-position: above;">MOBS</a></li>
+                    <li><a href="#" style="color:wheat;text-underline-position: above;">ABOUT</a></li>
+                    <li><a href="#judulnews" style="color:wheat;text-underline-position: above;">NEWS</a></li>
+                    <div class="underbar"></div>
+                </ul>
+            </header>
+        
+        <div id="backgroundhead"></div>
+        <div id="scrollpath"></div>
+        <div id="progressbar"></div>
+        <div id="scrollpath2"></div>
+        <div id="progressbar2"></div>
+
+        <div id="penghalangskills"></div>
+        <div id="penghalangskills2"></div>
+        <div id="judulskills">SKILLS</div>
+
+        <div id="penghalangrunes"></div>
+        <div id="penghalangrunes2"></div>
+        <div id="judulrunes">RUNES</div>
+
+        <div id="gambarrunes1"></div>
+        <div id="gambarrunes2"></div>
+
+        <div id="runes1slot1" div data-aos="fade-down" data-aos-duration="500"></div>
+        <div id="runes1slot2" div data-aos="fade-down-left" data-aos-duration="500"></div>
+        <div id="runes1slot3" div data-aos="fade-up-left" data-aos-duration="500"></div>
+        <div id="runes1slot4" div data-aos="fade-up" data-aos-duration="500"></div>
+        <div id="runes1slot5" div data-aos="fade-up-right" data-aos-duration="500"></div>
+        <div id="runes1slot6" div data-aos="fade-down-right" data-aos-duration="500"></div>
+
+        <div id="textrunes1">ATK%</div>
+        <div id="textrunes2">SPD</div>
+        <div id="textrunes3">CRIT DMG%</div>
+
+        <div id="textrunes4">ATK%</div>
+        <div id="textrunes5">SPD</div>
+        <div id="textrunes6">CRIT DMG%</div>
+
+        <div id="runes2slot1" div data-aos="fade-down" data-aos-duration="500"></div>
+        <div id="runes2slot2" div data-aos="fade-down-left" data-aos-duration="500"></div>
+        <div id="runes2slot3" div data-aos="fade-up-left" data-aos-duration="500"></div>
+        <div id="runes2slot4" div data-aos="fade-up" data-aos-duration="500"></div>
+        <div id="runes2slot5" div data-aos="fade-up-right" data-aos-duration="500"></div>
+        <div id="runes2slot6" div data-aos="fade-down-right" data-aos-duration="500"></div>
+
+        <div id="isirunes1">Early Runes</div>
+        <div id="isirunes2">Late Runes</div>
+
+        <div id="penghalangawaken"></div>
+        <div id="penghalangawaken2"></div>
+        <div id="judulawaken" data-aos="fade-up" data-aos-duration="500">AWAKEN</div>
+        <div id="isiawaken" data-aos="fade-up" data-aos-duration="500">
+            AWAKEN BONUS
+            <br><br>
+            <h3>STRENGTHEN SKILL [WEAKEN]</h3>
+            <br><br><BR><BR>
+            ESSENCE TO AWAKEN
+        </div>
+        
+        <div id="gambarskillawaken" data-aos="fade-up" data-aos-duration="500"></div>
+
+        <div id="isirating">
+        Dungeon
+        <br><br>
+        Farming
+        <br><br>
+        Arena Offense
+        <br><br>
+        Arena Defense
+        <br><br>
+        Guild War Offense
+        <br><br>
+        Guild War Defense
+        <br><br>
+        Tower of Ascension
+        </div>
+        <div id="star1"></div>
+        <div id="star2"></div>
+        <div id="star3"></div>
+        <div id="star4"></div>
+        <div id="star5"></div>
+        <div id="star6"></div>
+        <div id="star7"></div>
+        <div id="fillstar1"></div>
+        <div id="fillstar2"></div>
+        <div id="fillstar3"></div>
+        <div id="fillstar4"></div>
+        <div id="fillstar5"></div>
+        <div id="fillstar6"></div>
+        <div id="fillstar7"></div>
+
+        <div id="gambaressence1"></div>
+        <div id="gambaressence2"></div>
+        <div id="gambaressence3"></div>
+        <div id="gambaressence4"></div>
+        
+
+        <div id="isiessence1" data-aos="fade-right" data-aos-duration="500">15x Essence of Magic (Mid)</div>
+        <div id="isiessence2" data-aos="fade-right" data-aos-duration="500">10x Essence of Magic (High)</div>
+        <div id="isiessence3" data-aos="fade-left" data-aos-duration="500">15x Essence of Darkness (Mid)</div>
+        <div id="isiessence4" data-aos="fade-left" data-aos-duration="500">12x Essence of Darkness (High)</div>
+
+        <div id="penghalangdevilmon"></div>
+        <div id="penghalangdevilmon2"></div>
+        <div id="juduldevilmon">DEVILMONS</div>
+        <div id="isidevilmon">
+            DEVILMON COST
+            <BR><br>
+            11 Devilmon or use Vampires
+        </div>
+        <div id="gambardevilmon" data-aos="fade-right" data-aos-duration="500"></div>
+        <div id="gambarvampire" data-aos="fade-left" data-aos-duration="500"></div>
+
+        <div id="penghalangrating"></div>
+        <div id="penghalangrating2"></div>
+        <div id="judulrating">RATING</div>
+
+        <div id="gambardebuff1" data-aos="fade-up" data-aos-duration="500"></div>
+        <div id="gambardebuff2" data-aos="fade-up" data-aos-duration="500"></div>
+        <div id="gambardebuff3" data-aos="fade-up" data-aos-duration="500"></div>
+
+        <div id="gambarbuff1" data-aos="fade-left" data-aos-duration="500"></div>
+        <div id="gambarbuff2" data-aos="fade-left" data-aos-duration="500"></div>
+
+        <div id="gambarleader" data-aos="fade-right" data-aos-duration="500"></div>
+        <div id="judulleader" data-aos="fade-right" data-aos-duration="500">
+            <b>LEADER SKILL</b>
+            <br><br>
+            Increases the Attack Power of ally monsters in the Dungeons by 38%.
+        </div>
+
+        <div id="gambarskill1" data-aos="fade-up" data-aos-duration="500"></div>
+        <div id="judulskill1" data-aos="fade-up" data-aos-duration="500">
+            <b>VAMPIRE BAT</b>
+            <br><br>
+            Attacks 2 times with a vampire bat and recovers HP by 30% of the inflicted damage.
+            <br><br>
+            Multiplier: 200% x2
+        </div>
+
+        <div id="gambarskill2" data-aos="fade-up" data-aos-duration="500"></div>
+        <div id="judulskill2" data-aos="fade-up" data-aos-duration="500">
+            <b>WEAKEN</b>
+            <br><br>
+            Attacks the enemy 3 times. Each attack weakens the enemy's Attack Power, decreases the enemy's Attack Speed and blocks beneficial effects for 2 turns with a 75% chance each. (Reusable in 4 turns)
+            <br><br>
+            Multiplier: 230% x3
+        </div>
+        
+        <div id="gambarskill3" data-aos="fade-left" data-aos-duration="500"></div>
+        <div id="judulskill3" data-aos="fade-left" data-aos-duration="500">
+            <b>BLOOD CONTRACT</b>
+            <br><br>
+            Makes the Blood Contract with all allies to grant the Vampire effect that heals their HP by 20% of the inflicted damage for 3 turns and increases their Attack Power for 3 turns. (Reusable in 6 turns)
+        </div>
+
+        <div id="penghalangfooter"></div>
+        <div id="footertambahan"></div>
+        <div id="footerr">
+            <div id="isifooter">All Guides © 2020 SWSA. Copyright ©Com2uS Corp. All Rights Reserved</div>
+        </div>
+
+        <div id="monster1"></div>
+        <div id="monster2"></div>
+        <div id="namamonster">DARK VAMPIRE LORD</div>
+        <div id="namamonsterawaken">EIRGAR</div>
+        <div id="star"></div>
+        <div id="tipemonster">ATTACK</div>
+
+        <div id="jumptosection">Jump to Section : </div>
+        <a href="#judulskills"><div id="btnSkill">Skills</div></a>
+        <a href="#judulawaken"><div id="btnAwaken">Awaken</div></a>
+        <a href="#juduldevilmon"><div id="btnDevilmon">Devilmon</div></a>
+        <a href="#judulrating"><div id="btnRating">Rating</div></a>
+        <a href="#judulrunes"><div id="btnRunes">Runes</div></a>
+
+        <a href="#logoheaderSW"><div id="backtotop"></div></a>
+        <div id="backtotoptext">Back to Top</div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    AOS.init({
+        duration : 1200,
+    })
+
+</script>
